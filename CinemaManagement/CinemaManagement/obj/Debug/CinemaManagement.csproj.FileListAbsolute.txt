@@ -1,0 +1,13 @@
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\bin\Debug\CinemaManagement.exe.config
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\bin\Debug\CinemaManagement.exe
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\bin\Debug\CinemaManagement.pdb
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.csprojResolveAssemblyReference.cache
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmLogin.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmMain.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.Properties.Resources.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.csproj.GenerateResource.Cache
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.exe
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.pdb
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmRegisterAccount.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmChangeAccount.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmCompany.resources
