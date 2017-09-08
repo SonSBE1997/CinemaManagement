@@ -33,7 +33,7 @@
             this.mniCategory = new System.Windows.Forms.ToolStripMenuItem();
             this.mniCinema = new System.Windows.Forms.ToolStripMenuItem();
             this.mniRoom = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniBuoiChieu = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniShow = new System.Windows.Forms.ToolStripMenuItem();
             this.mniHour = new System.Windows.Forms.ToolStripMenuItem();
             this.mniType = new System.Windows.Forms.ToolStripMenuItem();
             this.mniCountry = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,11 +42,11 @@
             this.mniTicket = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mniSystem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mniLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.mniExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAboutSoft = new System.Windows.Forms.ToolStripMenuItem();
-            this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,7 +73,7 @@
             this.mniCategory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniCinema,
             this.mniRoom,
-            this.mniBuoiChieu,
+            this.mniShow,
             this.mniHour,
             this.mniType,
             this.mniCountry,
@@ -87,36 +87,42 @@
             this.mniCinema.Name = "mniCinema";
             this.mniCinema.Size = new System.Drawing.Size(152, 22);
             this.mniCinema.Text = "&Rạp";
+            this.mniCinema.Click += new System.EventHandler(this.mniCinema_Click);
             // 
             // mniRoom
             // 
             this.mniRoom.Name = "mniRoom";
             this.mniRoom.Size = new System.Drawing.Size(152, 22);
             this.mniRoom.Text = "&Phòng chiếu";
+            this.mniRoom.Click += new System.EventHandler(this.mniRoom_Click);
             // 
-            // mniBuoiChieu
+            // mniShow
             // 
-            this.mniBuoiChieu.Name = "mniBuoiChieu";
-            this.mniBuoiChieu.Size = new System.Drawing.Size(152, 22);
-            this.mniBuoiChieu.Text = "Buổi chiếu";
+            this.mniShow.Name = "mniShow";
+            this.mniShow.Size = new System.Drawing.Size(152, 22);
+            this.mniShow.Text = "Buổi chiếu";
+            this.mniShow.Click += new System.EventHandler(this.mniBuoiChieu_Click);
             // 
             // mniHour
             // 
             this.mniHour.Name = "mniHour";
             this.mniHour.Size = new System.Drawing.Size(152, 22);
             this.mniHour.Text = "&Giờ chiếu";
+            this.mniHour.Click += new System.EventHandler(this.mniHour_Click);
             // 
             // mniType
             // 
             this.mniType.Name = "mniType";
             this.mniType.Size = new System.Drawing.Size(152, 22);
             this.mniType.Text = "&Thể loại";
+            this.mniType.Click += new System.EventHandler(this.mniType_Click);
             // 
             // mniCountry
             // 
             this.mniCountry.Name = "mniCountry";
             this.mniCountry.Size = new System.Drawing.Size(152, 22);
             this.mniCountry.Text = "&Nước sản xuất";
+            this.mniCountry.Click += new System.EventHandler(this.mniCountry_Click);
             // 
             // mniCompany
             // 
@@ -153,27 +159,6 @@
             this.mniSystem.Size = new System.Drawing.Size(69, 20);
             this.mniSystem.Text = "&Hệ thống";
             // 
-            // mniLogout
-            // 
-            this.mniLogout.Name = "mniLogout";
-            this.mniLogout.Size = new System.Drawing.Size(72, 20);
-            this.mniLogout.Text = "&Đăng xuất";
-            this.mniLogout.Click += new System.EventHandler(this.mniLogout_Click);
-            // 
-            // mniExit
-            // 
-            this.mniExit.Name = "mniExit";
-            this.mniExit.Size = new System.Drawing.Size(50, 20);
-            this.mniExit.Text = "&Thoát";
-            this.mniExit.Click += new System.EventHandler(this.mniExit_Click);
-            // 
-            // mniAboutSoft
-            // 
-            this.mniAboutSoft.Name = "mniAboutSoft";
-            this.mniAboutSoft.Size = new System.Drawing.Size(132, 20);
-            this.mniAboutSoft.Text = "Thông t&in phần mềm";
-            this.mniAboutSoft.Click += new System.EventHandler(this.mniAboutSoft_Click);
-            // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
@@ -187,6 +172,28 @@
             this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "&Đổi thông tin";
             this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
+            // 
+            // mniLogout
+            // 
+            this.mniLogout.Name = "mniLogout";
+            this.mniLogout.Size = new System.Drawing.Size(72, 20);
+            this.mniLogout.Text = "&Đăng xuất";
+            this.mniLogout.Click += new System.EventHandler(this.mniLogout_Click);
+            // 
+            // mniExit
+            // 
+            this.mniExit.Name = "mniExit";
+            this.mniExit.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
+            this.mniExit.Size = new System.Drawing.Size(50, 20);
+            this.mniExit.Text = "&Thoát";
+            this.mniExit.Click += new System.EventHandler(this.mniExit_Click);
+            // 
+            // mniAboutSoft
+            // 
+            this.mniAboutSoft.Name = "mniAboutSoft";
+            this.mniAboutSoft.Size = new System.Drawing.Size(132, 20);
+            this.mniAboutSoft.Text = "Thông t&in phần mềm";
+            this.mniAboutSoft.Click += new System.EventHandler(this.mniAboutSoft_Click);
             // 
             // frmMain
             // 
@@ -222,7 +229,7 @@
         private System.Windows.Forms.ToolStripMenuItem mniAboutSoft;
         private System.Windows.Forms.ToolStripMenuItem mniCinema;
         private System.Windows.Forms.ToolStripMenuItem mniRoom;
-        private System.Windows.Forms.ToolStripMenuItem mniBuoiChieu;
+        private System.Windows.Forms.ToolStripMenuItem mniShow;
         private System.Windows.Forms.ToolStripMenuItem mniHour;
         private System.Windows.Forms.ToolStripMenuItem mniType;
         private System.Windows.Forms.ToolStripMenuItem mniCountry;

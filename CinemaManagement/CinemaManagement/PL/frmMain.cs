@@ -90,7 +90,9 @@ namespace CinemaManagement.PL
 
         private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string str = "\r\tTHÔNG TIN NHÂN VIÊN\r\n\n\t- Tên đăng nhập: " + account.Username + "\r\n\t- Tên hiển thị: " + account.DisplayName;
+            string str = "\r\tTHÔNG TIN NHÂN VIÊN\r\n\n\t- Tên đăng nhập: " + account.Username + "\r\n\t- Tên hiển thị: " + account.DisplayName + "\r\n\t- Chức vụ: ";
+            if (account.Type == 0) str += "Nhân viên";
+            else str += "Quản trị viên";
             MessageBox.Show(str, "About cinema management", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -123,17 +125,90 @@ namespace CinemaManagement.PL
         }
         bool CheckExistForm(string name)
         {
-            bool check = false;
             foreach (Form frm in this.MdiChildren)
             {
                 if (frm.Name == name)
                 {
-                    check = true;
-                    break;
+                    return true;
                 }
             }
-            return check;
+            return false;
         }
         #endregion
+
+        private void mniCountry_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("frmCountry"))
+            {
+                frmCountry country = new frmCountry();
+                country.MdiParent = this;
+                country.Show();
+            }
+            else
+            {
+                ActiveChilForm("frmCountry");
+            }
+        }
+
+        private void mniType_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("frmFilmType"))
+            {
+                frmFilmType filmType = new frmFilmType();
+                filmType.MdiParent = this;
+                filmType.Show();
+            }
+            else
+            {
+                ActiveChilForm("frmFilmType");
+            }
+        }
+
+        private void mniHour_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("frmTimeStartFilm"))
+            {
+                frmTimeStartFilm filmStart = new frmTimeStartFilm();
+                filmStart.MdiParent = this;
+                filmStart.Show();
+            }
+            else
+            {
+                ActiveChilForm("frmTimeStartFilm");
+            }
+        }
+
+        private void mniBuoiChieu_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mniRoom_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("frmCinemaRoom"))
+            {
+                frmCinemaRoom cinemaRoom = new frmCinemaRoom();
+                cinemaRoom.MdiParent = this;
+                cinemaRoom.Show();
+            }
+            else
+            {
+                ActiveChilForm("frmCinemaRoom");
+            }
+        }
+
+        private void mniCinema_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("frmCinema"))
+            {
+                frmCinema cinema = new frmCinema();
+                cinema.MdiParent = this;
+                cinema.Show();
+            }
+            else
+            {
+                ActiveChilForm("frmCinema");
+            }
+        }
     }
 }

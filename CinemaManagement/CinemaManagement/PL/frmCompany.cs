@@ -38,7 +38,7 @@ namespace CinemaManagement.PL
             string id = txtCompanyID.Text;
             string name = txtCompanyName.Text;
 
-            if (CheckExistCompanyID(id))
+            if (CompanyBLL.Instance.CheckExistCompanyByID(id))
             {
                 MessageBox.Show("Mã hãng sản xuất đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -51,14 +51,8 @@ namespace CinemaManagement.PL
             }
             else
             {
-                MessageBox.Show("Thêm hãng sản xuất thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Thêm hãng sản xuất thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        private bool CheckExistCompanyID(string id)
-        {
-            if (CompanyBLL.Instance.GetRowCompanyByID(id) != null) return true;
-            return false;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -73,14 +67,14 @@ namespace CinemaManagement.PL
             }
             else
             {
-                MessageBox.Show("Sửa hãng sản xuất thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sửa hãng sản xuất thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string id = txtCompanyID.Text;
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn hãng sản xuất có ID là " + id + " không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa hãng sản xuất có ID là " + id + " không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
                 if (CompanyBLL.Instance.DeleteCompany(id))

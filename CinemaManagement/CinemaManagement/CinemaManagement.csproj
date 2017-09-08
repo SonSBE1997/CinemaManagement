@@ -47,11 +47,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\AccountBLL.cs" />
+    <Compile Include="BLL\CinemaBLL.cs" />
+    <Compile Include="BLL\CinemaRoom.cs" />
     <Compile Include="BLL\CompanyBLL.cs" />
+    <Compile Include="BLL\CountryBLL.cs" />
     <Compile Include="BLL\DataProvider.cs" />
     <Compile Include="BLL\Encryptor.cs" />
+    <Compile Include="BLL\TimeStartBLL.cs" />
+    <Compile Include="BLL\FilmTypeBLL.cs" />
     <Compile Include="DAL\Account.cs" />
+    <Compile Include="DAL\Cinema.cs" />
+    <Compile Include="DAL\CinemaRoom.cs" />
     <Compile Include="DAL\Company.cs" />
+    <Compile Include="DAL\Country.cs" />
+    <Compile Include="DAL\TimeStart.cs" />
+    <Compile Include="DAL\FilmType.cs" />
+    <Compile Include="PL\frmCinema.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmCinema.Designer.cs">
+      <DependentUpon>frmCinema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frmCinemaRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmCinemaRoom.Designer.cs">
+      <DependentUpon>frmCinemaRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\frmChangeAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +85,18 @@
     </Compile>
     <Compile Include="PL\frmCompany.Designer.cs">
       <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frmCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmCountry.Designer.cs">
+      <DependentUpon>frmCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PL\frmFilmType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmFilmType.Designer.cs">
+      <DependentUpon>frmFilmType.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\frmLogin.cs">
       <SubType>Form</SubType>
@@ -82,13 +116,31 @@
     <Compile Include="PL\frmRegisterAccount.Designer.cs">
       <DependentUpon>frmRegisterAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\frmTimeStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmTimeStart.Designer.cs">
+      <DependentUpon>frmTimeStart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PL\frmCinema.resx">
+      <DependentUpon>frmCinema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmCinemaRoom.resx">
+      <DependentUpon>frmCinemaRoom.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\frmChangeAccount.resx">
       <DependentUpon>frmChangeAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frmCompany.resx">
       <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmCountry.resx">
+      <DependentUpon>frmCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmFilmType.resx">
+      <DependentUpon>frmFilmType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -98,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\frmRegisterAccount.resx">
       <DependentUpon>frmRegisterAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\frmTimeStart.resx">
+      <DependentUpon>frmTimeStart.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

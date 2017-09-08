@@ -143,4 +143,3 @@ AS
                 AND password = @password
     END
 GO
-

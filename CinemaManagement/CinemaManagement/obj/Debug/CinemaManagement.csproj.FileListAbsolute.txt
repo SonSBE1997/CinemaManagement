@@ -11,3 +11,8 @@ D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagemen
 D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmRegisterAccount.resources
 D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmChangeAccount.resources
 D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmCompany.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmCountry.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmFilmType.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmTimeStartFilm.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmCinema.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmCinemaRoom.resources

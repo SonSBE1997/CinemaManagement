@@ -33,9 +33,9 @@ namespace CinemaManagement.BLL
             return DataProvider.Instance.ExcuteQuery("SELECT mahangsx as [Mã hãng sản xuất], tenhangsx as [Tên hãng sản xuất] FROM dbo.HangSX");
         }
 
-        public DataRow GetRowCompanyByID(string id)
+        public bool CheckExistCompanyByID(string id)
         {
-            return DataProvider.Instance.ExcuteQuery("SELECT * FROM dbo.HangSX").Rows[0];
+            return DataProvider.Instance.ExcuteQuery("SELECT * FROM dbo.HangSX WHERE mahangsx = '" + id + "'").Rows.Count > 0;
         }
 
         public bool DeleteCompany(string id)
