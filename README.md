@@ -1,1 +1,1 @@
-"# CinemaManagement" 
+"Cinema Management - Windows Form Application" 
