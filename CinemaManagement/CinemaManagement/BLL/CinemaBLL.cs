@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CinemaManagement.DAL;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -33,6 +34,18 @@ namespace CinemaManagement.BLL
             return DataProvider.Instance.ExcuteQuery(query);
         }
 
+        public List<Cinema> GetListCinema()
+        {
+            List<Cinema> list = new List<Cinema>();
+            DataTable table = DataProvider.Instance.ExcuteQuery("SELECT * FROM dbo.Rap");
+            foreach (DataRow item in table.Rows)
+            {
+                list.Add(new Cinema(item));
+            }
+
+            return list;
+        }
+
         public bool CheckExistCinemaByID(string id)
         {
             return DataProvider.Instance.ExcuteQuery("SELECT * FROM dbo.Rap WHERE marap = '" + id + "'").Rows.Count > 0;
@@ -54,6 +67,26 @@ namespace CinemaManagement.BLL
         public bool DeleteCinema(string id)
         {
             return DataProvider.Instance.ExcuteNonQuery("DELETE FROM dbo.Rap WHERE marap = '" + id + "'") > 0;
+        }
+
+        public Cinema GetCinemaByID(string id)
+        {
+            DataTable table = DataProvider.Instance.ExcuteQuery("SELECT * FROM dbo.Rap WHERE marap = '" + id + "'");
+            foreach (DataRow item in table.Rows)
+            {
+                return new Cinema(item);
+            }
+            return null;
+        }
+
+        public Cinema GetCinemaByName(string name)
+        {
+            DataTable table = DataProvider.Instance.ExcuteQuery("SELECT * FROM dbo.Rap WHERE tenrap = N'" + name + "'");
+            foreach (DataRow item in table.Rows)
+            {
+                return new Cinema(item);
+            }
+            return null;
         }
     }
 }

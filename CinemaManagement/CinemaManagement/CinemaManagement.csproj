@@ -48,7 +48,7 @@
   <ItemGroup>
     <Compile Include="BLL\AccountBLL.cs" />
     <Compile Include="BLL\CinemaBLL.cs" />
-    <Compile Include="BLL\CinemaRoom.cs" />
+    <Compile Include="BLL\CinemaRoomBLL.cs" />
     <Compile Include="BLL\CompanyBLL.cs" />
     <Compile Include="BLL\CountryBLL.cs" />
     <Compile Include="BLL\DataProvider.cs" />
