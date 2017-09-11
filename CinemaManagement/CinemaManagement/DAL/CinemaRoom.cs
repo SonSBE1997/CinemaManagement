@@ -15,14 +15,14 @@ namespace CinemaManagement.DAL
 
         public string Name { get; set; }
 
-        public int CountChair { get; set; }
+        public int Seats { get; set; }
 
         public CinemaRoom(DataRow row)
         {
             this.CinemaID = row["marap"].ToString();
             this.ID = row["maphong"].ToString();
             this.Name = row["tenphong"].ToString();
-            this.CountChair = (int)row["soghe"];
+            this.Seats = (int)row["soghe"];
         }
     }
 }

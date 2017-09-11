@@ -39,7 +39,7 @@ namespace CinemaManagement.BLL
 
         public bool DeleteFilmTime(string id)
         {
-            return DataProvider.Instance.ExcuteNonQuery("DELETE FROM dbo.GioChieu WHERE magiochieu = '" + id + "'") > 0;
+            return DataProvider.Instance.ExcuteNonQuery("EXEC dbo.USP_XoaGioChieu @magiochieu", new object[] { id }) > 0;
         }
 
 
@@ -50,7 +50,7 @@ namespace CinemaManagement.BLL
 
         public bool AddFilmTime(string id, int cost)
         {
-            return DataProvider.Instance.ExcuteNonQuery(string.Format(" INSERT INTO dbo.GioChieu ( magiochieu, dongia )VALUES( '{0}', {1})", id, cost)) > 0;
+            return DataProvider.Instance.ExcuteNonQuery(string.Format("INSERT INTO dbo.GioChieu ( magiochieu, dongia )VALUES( '{0}', {1})", id, cost)) > 0;
         }
 
 

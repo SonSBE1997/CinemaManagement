@@ -40,7 +40,7 @@ namespace CinemaManagement.BLL
 
         public bool DeleteCompany(string id)
         {
-            return DataProvider.Instance.ExcuteNonQuery("DELETE FROM dbo.HangSX WHERE mahangsx = '" + id + "'") > 0;
+            return DataProvider.Instance.ExcuteNonQuery("EXEC dbo.USP_XoaHangSX  @mahangsx", new object[] { id }) > 0;
         }
 
 
@@ -51,7 +51,7 @@ namespace CinemaManagement.BLL
 
         public bool AddCompany(string id, string name)
         {
-            return DataProvider.Instance.ExcuteNonQuery(string.Format(" INSERT INTO dbo.HangSX ( mahangsx, tenhangsx )VALUES( '{0}', N'{1}')", id, name)) > 0;
+            return DataProvider.Instance.ExcuteNonQuery(string.Format("INSERT INTO dbo.HangSX ( mahangsx, tenhangsx )VALUES( '{0}', N'{1}')", id, name)) > 0;
         }
 
     }

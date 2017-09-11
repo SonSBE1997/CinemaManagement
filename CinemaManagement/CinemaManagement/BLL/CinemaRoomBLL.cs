@@ -40,7 +40,7 @@ namespace CinemaManagement.BLL
 
         public bool DeleteCinemaRoom(string id)
         {
-            return DataProvider.Instance.ExcuteNonQuery("DELETE FROM dbo.PhongChieu WHERE maphong = '" + id + "'") > 0;
+            return DataProvider.Instance.ExcuteNonQuery("EXEC dbo.USP_XoaPhongChieu @maphongchieu", new object[] { id }) > 0;
         }
 
         public bool AddCinemaRoom(string id, string name, int seats, string cinemaID)

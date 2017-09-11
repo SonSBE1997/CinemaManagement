@@ -13,7 +13,8 @@ CREATE TABLE Rap
       diachi NVARCHAR(255) NOT NULL ,
       dienthoai VARCHAR(30) NOT NULL ,
       sophong INT NOT NULL ,
-      tongsoghe INT NOT NULL ,
+      tongsoghe INT NOT NULL
+                    DEFAULT 0 ,
       CONSTRAINT pk_MaRap PRIMARY KEY ( marap )
     )
 GO
@@ -115,7 +116,9 @@ CREATE TABLE Ve
       mave VARCHAR(50) NOT NULL ,
       hangghe VARCHAR(20) ,
       soghe INT ,
-      CONSTRAINT pk_MaShow_MaVe PRIMARY KEY ( mashow, mave ) ,
+      trangthai NVARCHAR(50)
+        DEFAULT N'Chưa đặt'
+        CONSTRAINT pk_MaShow_MaVe PRIMARY KEY ( mashow, mave ) ,
       CONSTRAINT fk_Ve_MaShow FOREIGN KEY ( mashow ) REFERENCES dbo.BuoiChieu ( mashow )
     )
 GO
@@ -129,6 +132,8 @@ CREATE TABLE TaiKhoan
       CONSTRAINT pk_TaiKhoan_Username PRIMARY KEY ( userName )
     )
 GO
+
+
 -------------------------------------- Tạo Store Procedure ----------------------------------
 
 -- Check Login
@@ -143,4 +148,219 @@ AS
                 AND password = @password
     END
 GO
+
+
+-- Xóa Hãng sản xuất
+CREATE PROC USP_XoaHangSX @mahangsx VARCHAR(50)
+AS
+    BEGIN
+        SELECT  maphim
+        INTO    Film
+        FROM    dbo.Phim
+        WHERE   mahangsx = @mahangsx;
+        WITH    Show
+                  AS ( SELECT   mashow
+                       FROM     dbo.BuoiChieu
+                       WHERE    maphim IN ( SELECT  *
+                                            FROM    Film )
+                     )
+            DELETE  dbo.Ve
+            WHERE   mashow IN ( SELECT  *
+                                FROM    Show )
+        DELETE  dbo.BuoiChieu
+        WHERE   maphim IN ( SELECT  *
+                            FROM    Film )
+        DELETE  dbo.Phim
+        WHERE   mahangsx = @mahangsx
+        DELETE  dbo.HangSX
+        WHERE   mahangsx = @mahangsx
+        DROP TABLE Film
+    END
+GO
+
+-- Xóa nước sản xuất
+
+CREATE PROC USP_XoaNuocSX @manuocsx VARCHAR(50)
+AS
+    BEGIN
+        SELECT  maphim
+        INTO    Film
+        FROM    dbo.Phim
+        WHERE   manuocsx = @manuocsx;
+        WITH    Show
+                  AS ( SELECT   mashow
+                       FROM     dbo.BuoiChieu
+                       WHERE    maphim IN ( SELECT  *
+                                            FROM    Film )
+                     )
+            DELETE  dbo.Ve
+            WHERE   mashow IN ( SELECT  *
+                                FROM    Show )
+        DELETE  dbo.BuoiChieu
+        WHERE   maphim IN ( SELECT  *
+                            FROM    Film )
+        DELETE  dbo.Phim
+        WHERE   manuocsx = @manuocsx
+        DELETE  dbo.NuocSanXuat
+        WHERE   manuocsx = @manuocsx
+        DROP TABLE Film
+    END
+GO
+
+-- Xóa thể loại
+CREATE PROC USP_XoaTheLoai @matheloai VARCHAR(50)
+AS
+    BEGIN
+        SELECT  maphim
+        INTO    Film
+        FROM    dbo.Phim
+        WHERE   matheloai = @matheloai;
+        WITH    Show
+                  AS ( SELECT   mashow
+                       FROM     dbo.BuoiChieu
+                       WHERE    maphim IN ( SELECT  *
+                                            FROM    Film )
+                     )
+            DELETE  dbo.Ve
+            WHERE   mashow IN ( SELECT  *
+                                FROM    Show )
+        DELETE  dbo.BuoiChieu
+        WHERE   maphim IN ( SELECT  *
+                            FROM    Film )
+        DELETE  dbo.Phim
+        WHERE   matheloai = @matheloai
+        DELETE  dbo.TheLoai
+        WHERE   matheloai = @matheloai
+        DROP TABLE Film
+    END
+GO
+
+-- Xóa Giờ chiếu
+
+CREATE PROC USP_XoaGioChieu
+    @magiochieu VARCHAR(50)
+AS
+    BEGIN
+		;
+        WITH    Show
+                  AS ( SELECT   mashow
+                       FROM     dbo.BuoiChieu
+                       WHERE    magiochieu = @magiochieu
+                     )
+            DELETE  dbo.Ve
+            WHERE   mashow IN ( SELECT  *
+                                FROM    Show )
+        DELETE  dbo.BuoiChieu
+        WHERE   magiochieu = @magiochieu
+        DELETE  dbo.GioChieu
+        WHERE   magiochieu = @magiochieu
+    END
+GO
+
+-- Xóa phòng chiếu
+CREATE PROC USP_XoaPhongChieu
+    @maphongchieu VARCHAR(50)
+AS
+    BEGIN
+		;
+        WITH    Show
+                  AS ( SELECT   mashow
+                       FROM     dbo.BuoiChieu
+                       WHERE    maphong = @maphongchieu
+                     )
+            DELETE  dbo.Ve
+            WHERE   mashow IN ( SELECT  *
+                                FROM    Show )
+        DELETE  dbo.BuoiChieu
+        WHERE   maphong = @maphongchieu
+        DELETE  dbo.PhongChieu
+        WHERE   maphong = @maphongchieu
+    END
+GO
+
+-- Xóa rạp chiếu
+CREATE PROC USP_XoaRapChieu
+    @marapchieu VARCHAR(50)
+AS
+    BEGIN
+		;
+        WITH    Show
+                  AS ( SELECT   mashow
+                       FROM     dbo.BuoiChieu
+                       WHERE    marap = @marapchieu
+                     )
+            DELETE  dbo.Ve
+            WHERE   mashow IN ( SELECT  *
+                                FROM    Show )
+        DELETE  dbo.BuoiChieu
+        WHERE   marap = @marapchieu
+        DELETE  dbo.PhongChieu
+        WHERE   marap = @marapchieu
+        DELETE  dbo.Rap
+        WHERE   marap = @marapchieu
+    END
+GO	
+
+-- Xóa phim
+CREATE PROC USP_XoaPhim @maphim VARCHAR(50)
+AS
+    BEGIN
+		;
+        WITH    Show
+                  AS ( SELECT   mashow
+                       FROM     dbo.BuoiChieu
+                       WHERE    maphim = @maphim
+                     )
+            DELETE  dbo.Ve
+            WHERE   mashow IN ( SELECT  *
+                                FROM    Show )
+        DELETE  dbo.BuoiChieu
+        WHERE   maphim = @maphim
+        DELETE  dbo.Phim
+        WHERE   maphim = @maphim
+    END
+GO
+
+-- Xóa Buổi Chiếu
+CREATE PROC USP_XoaBuoiChieu @mashow VARCHAR(50)
+AS
+    BEGIN
+        DELETE  dbo.Ve
+        WHERE   mashow = @mashow
+        DELETE  dbo.BuoiChieu
+        WHERE   mashow = @mashow
+    END
+GO	
+
+-- Lấy tất cả thông tin phim
+CREATE PROC USP_GetAllFilm
+AS
+    BEGIN
+
+        SELECT  p.maphim ,
+                p.tenphim ,
+                n.tennuocsx ,
+                h.tenhangsx ,
+                p.daodien ,
+                t.tentheloai ,
+                p.ngaykhoichieu ,
+                p.ngayketthuc ,
+                p.nudienvienchinh ,
+                p.namdienvienchinh ,
+                p.noidungchinh ,
+                p.tongchiphi ,
+                p.tongthu
+        FROM    dbo.Phim AS p ,
+                dbo.HangSX AS h ,
+                dbo.NuocSanXuat AS n ,
+                dbo.TheLoai AS t
+        WHERE   p.manuocsx = n.manuocsx
+                AND p.mahangsx = h.mahangsx
+                AND p.matheloai = t.matheloai
+
+    END
+GO
+
+
+--------------------------------------------- TẠO CÁC TRIGGER -----------------------------------------------
 

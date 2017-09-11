@@ -40,7 +40,7 @@ namespace CinemaManagement.BLL
 
         public bool DeleteCountry(string id)
         {
-            return DataProvider.Instance.ExcuteNonQuery("DELETE FROM dbo.NuocSanXuat WHERE manuocsx = '" + id + "'") > 0;
+            return DataProvider.Instance.ExcuteNonQuery("EXEC dbo.USP_XoaNuocSX @manuocsx", new object[] { id }) > 0;
         }
 
 
@@ -51,7 +51,7 @@ namespace CinemaManagement.BLL
 
         public bool AddCountry(string id, string name)
         {
-            return DataProvider.Instance.ExcuteNonQuery(string.Format(" INSERT INTO dbo.NuocSanXuat ( manuocsx, tennuocsx )VALUES( '{0}', N'{1}')", id, name)) > 0;
+            return DataProvider.Instance.ExcuteNonQuery(string.Format("INSERT INTO dbo.NuocSanXuat ( manuocsx, tennuocsx )VALUES( '{0}', N'{1}')", id, name)) > 0;
         }
     }
 }

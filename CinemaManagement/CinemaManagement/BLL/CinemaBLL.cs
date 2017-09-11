@@ -66,7 +66,7 @@ namespace CinemaManagement.BLL
 
         public bool DeleteCinema(string id)
         {
-            return DataProvider.Instance.ExcuteNonQuery("DELETE FROM dbo.Rap WHERE marap = '" + id + "'") > 0;
+            return DataProvider.Instance.ExcuteNonQuery("EXEC dbo.USP_XoaRapChieu @marapchieu", new object[] { id }) > 0;
         }
 
         public Cinema GetCinemaByID(string id)

@@ -16,3 +16,4 @@ D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagemen
 D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmTimeStartFilm.resources
 D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmCinema.resources
 D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmCinemaRoom.resources
+D:\hoc tap\C#\BaiTap\Winform\QuanLyRapChieuPhim\CinemaManagement\CinemaManagement\obj\Debug\CinemaManagement.PL.frmAllFilm.resources

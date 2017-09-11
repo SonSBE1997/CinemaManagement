@@ -33,13 +33,14 @@
             this.mniCategory = new System.Windows.Forms.ToolStripMenuItem();
             this.mniCinema = new System.Windows.Forms.ToolStripMenuItem();
             this.mniRoom = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniShow = new System.Windows.Forms.ToolStripMenuItem();
             this.mniHour = new System.Windows.Forms.ToolStripMenuItem();
             this.mniType = new System.Windows.Forms.ToolStripMenuItem();
             this.mniCountry = new System.Windows.Forms.ToolStripMenuItem();
             this.mniCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.mniFilm = new System.Windows.Forms.ToolStripMenuItem();
-            this.mniTicket = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniShowingFilm = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniAllFilm = new System.Windows.Forms.ToolStripMenuItem();
+            this.mniShowTime = new System.Windows.Forms.ToolStripMenuItem();
             this.mniAdmin = new System.Windows.Forms.ToolStripMenuItem();
             this.mniSystem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniCategory,
             this.mniFilm,
-            this.mniTicket,
+            this.mniShowTime,
             this.mniAdmin,
             this.mniSystem,
             this.mniLogout,
@@ -73,7 +74,6 @@
             this.mniCategory.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mniCinema,
             this.mniRoom,
-            this.mniShow,
             this.mniHour,
             this.mniType,
             this.mniCountry,
@@ -95,13 +95,6 @@
             this.mniRoom.Size = new System.Drawing.Size(152, 22);
             this.mniRoom.Text = "&Phòng chiếu";
             this.mniRoom.Click += new System.EventHandler(this.mniRoom_Click);
-            // 
-            // mniShow
-            // 
-            this.mniShow.Name = "mniShow";
-            this.mniShow.Size = new System.Drawing.Size(152, 22);
-            this.mniShow.Text = "Buổi chiếu";
-            this.mniShow.Click += new System.EventHandler(this.mniBuoiChieu_Click);
             // 
             // mniHour
             // 
@@ -133,15 +126,33 @@
             // 
             // mniFilm
             // 
+            this.mniFilm.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mniShowingFilm,
+            this.mniAllFilm});
             this.mniFilm.Name = "mniFilm";
             this.mniFilm.Size = new System.Drawing.Size(47, 20);
             this.mniFilm.Text = "&Phim";
             // 
-            // mniTicket
+            // mniShowingFilm
             // 
-            this.mniTicket.Name = "mniTicket";
-            this.mniTicket.Size = new System.Drawing.Size(31, 20);
-            this.mniTicket.Text = "&Vé";
+            this.mniShowingFilm.Name = "mniShowingFilm";
+            this.mniShowingFilm.Size = new System.Drawing.Size(164, 22);
+            this.mniShowingFilm.Text = "Phim &đang chiếu";
+            this.mniShowingFilm.Click += new System.EventHandler(this.mniShowingFilm_Click);
+            // 
+            // mniAllFilm
+            // 
+            this.mniAllFilm.Name = "mniAllFilm";
+            this.mniAllFilm.Size = new System.Drawing.Size(164, 22);
+            this.mniAllFilm.Text = "&Tất cả phim";
+            this.mniAllFilm.Click += new System.EventHandler(this.mniAllFilm_Click);
+            // 
+            // mniShowTime
+            // 
+            this.mniShowTime.Name = "mniShowTime";
+            this.mniShowTime.Size = new System.Drawing.Size(73, 20);
+            this.mniShowTime.Text = "&Lịch chiếu";
+            this.mniShowTime.Click += new System.EventHandler(this.mniShowTime_Click);
             // 
             // mniAdmin
             // 
@@ -229,14 +240,15 @@
         private System.Windows.Forms.ToolStripMenuItem mniAboutSoft;
         private System.Windows.Forms.ToolStripMenuItem mniCinema;
         private System.Windows.Forms.ToolStripMenuItem mniRoom;
-        private System.Windows.Forms.ToolStripMenuItem mniShow;
         private System.Windows.Forms.ToolStripMenuItem mniHour;
         private System.Windows.Forms.ToolStripMenuItem mniType;
         private System.Windows.Forms.ToolStripMenuItem mniCountry;
         private System.Windows.Forms.ToolStripMenuItem mniCompany;
-        private System.Windows.Forms.ToolStripMenuItem mniTicket;
+        private System.Windows.Forms.ToolStripMenuItem mniShowTime;
         private System.Windows.Forms.ToolStripMenuItem mniSystem;
         private System.Windows.Forms.ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mniShowingFilm;
+        private System.Windows.Forms.ToolStripMenuItem mniAllFilm;
     }
 }

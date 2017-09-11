@@ -53,6 +53,7 @@
     <Compile Include="BLL\CountryBLL.cs" />
     <Compile Include="BLL\DataProvider.cs" />
     <Compile Include="BLL\Encryptor.cs" />
+    <Compile Include="BLL\FilmBLL.cs" />
     <Compile Include="BLL\TimeStartBLL.cs" />
     <Compile Include="BLL\FilmTypeBLL.cs" />
     <Compile Include="DAL\Account.cs" />
@@ -60,8 +61,15 @@
     <Compile Include="DAL\CinemaRoom.cs" />
     <Compile Include="DAL\Company.cs" />
     <Compile Include="DAL\Country.cs" />
+    <Compile Include="DAL\Film.cs" />
     <Compile Include="DAL\TimeStart.cs" />
     <Compile Include="DAL\FilmType.cs" />
+    <Compile Include="PL\frmAllFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\frmAllFilm.Designer.cs">
+      <DependentUpon>frmAllFilm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\frmCinema.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +132,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="PL\frmAllFilm.resx">
+      <DependentUpon>frmAllFilm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\frmCinema.resx">
       <DependentUpon>frmCinema.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\cinema.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

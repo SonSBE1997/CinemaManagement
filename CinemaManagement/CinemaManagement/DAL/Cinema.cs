@@ -19,7 +19,7 @@ namespace CinemaManagement.DAL
 
         public int CountRoom { get; set; }
 
-        public int CoutChair { get; set; }
+        public int Seats { get; set; }
 
         public Cinema(DataRow row)
         {
@@ -28,7 +28,7 @@ namespace CinemaManagement.DAL
             this.Address = row["diachi"].ToString();
             this.PhoneNumber = row["dienthoai"].ToString();
             this.CountRoom = (int)row["sophong"];
-            this.CoutChair = (int)row["tongsoghe"];
+            this.Seats = (int)row["tongsoghe"];
         }
     }
 }

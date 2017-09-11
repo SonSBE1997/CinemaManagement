@@ -178,11 +178,6 @@ namespace CinemaManagement.PL
             }
         }
 
-        private void mniBuoiChieu_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void mniRoom_Click(object sender, EventArgs e)
         {
             if (!CheckExistForm("frmCinemaRoom"))
@@ -208,6 +203,30 @@ namespace CinemaManagement.PL
             else
             {
                 ActiveChilForm("frmCinema");
+            }
+        }
+
+        private void mniShowTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mniShowingFilm_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mniAllFilm_Click(object sender, EventArgs e)
+        {
+            if (!CheckExistForm("frmAllFilm"))
+            {
+                frmAllFilm listFilm = new frmAllFilm();
+                listFilm.MdiParent = this;
+                listFilm.Show();
+            }
+            else
+            {
+                ActiveChilForm("frmAllFilm");
             }
         }
     }

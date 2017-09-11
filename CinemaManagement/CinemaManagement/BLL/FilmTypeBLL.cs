@@ -40,7 +40,7 @@ namespace CinemaManagement.BLL
 
         public bool DeleteFilmType(string id)
         {
-            return DataProvider.Instance.ExcuteNonQuery("DELETE FROM dbo.TheLoai WHERE matheloai = '" + id + "'") > 0;
+            return DataProvider.Instance.ExcuteNonQuery("EXEC dbo.USP_XoaTheLoai @matheloai", new object[] { id }) > 0;
         }
 
 
@@ -51,7 +51,7 @@ namespace CinemaManagement.BLL
 
         public bool AddFilmType(string id, string name)
         {
-            return DataProvider.Instance.ExcuteNonQuery(string.Format(" INSERT INTO dbo.TheLoai ( matheloai, tentheloai )VALUES( '{0}', N'{1}')", id, name)) > 0;
+            return DataProvider.Instance.ExcuteNonQuery(string.Format("INSERT INTO dbo.TheLoai ( matheloai, tentheloai )VALUES( '{0}', N'{1}')", id, name)) > 0;
         }
     }
 }
